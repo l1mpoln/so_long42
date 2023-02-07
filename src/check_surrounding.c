@@ -33,7 +33,7 @@ static void check_first_and_last(t_map *map)
     i = 0;
     while (map->mappdata[0] != '\0')
     {
-        if (i == '1')
+        if (map->mappdata[0][i] == '1')
             i++;
         else    
             ft_error("Map incorrect");
@@ -41,7 +41,7 @@ static void check_first_and_last(t_map *map)
     i = 0;
     while (map->mappdata[map->height] != '\0')
     {
-        if (i == '1')
+        if (map->mappdata[map->height][i] == '1')
             i++;
         else
             ft_error("Map incorrect");

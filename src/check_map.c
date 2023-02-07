@@ -55,4 +55,5 @@ void check_map(char *argument, t_map *map)
     map->mappdata = create_array_of_lines(argument); // create an array of lines for easier work with it
     check_rectangular(&map);
     check_surrounding(&map);
+    check_resources(&map);
 }

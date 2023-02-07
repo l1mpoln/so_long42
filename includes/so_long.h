@@ -37,5 +37,6 @@ int     find_and_check_x(t_map *map, int y);
 //map
 void check_map(char *argument, t_map *map);
 void    check_surrounding(t_map *map);
+void    check_resources(t_map *map);
 
 #endif  
