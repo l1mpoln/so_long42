@@ -18,5 +18,5 @@ int main(int argc, char **argv)
 
     if (argc != 2)
         ft_error("Invalid number of arguments.");
-    work_map(argv[1]); //work with map(check valid, check extension etc.)
+    check_map(argv[1]); //check map(check valid, check extension etc.)
 }
