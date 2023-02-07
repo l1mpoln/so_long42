@@ -12,6 +12,17 @@
 
 #include "../includes/so_long.h"
 
+static void check_rectangular(t_map *map)
+{
+    int x;
+    int y;
+
+    y = find_y(map); //utils
+    find_and_check_x(map, y);
+    if (x == y)
+        ft_error("Incorrect map");
+}
+
 static char **create_array_of_lines(char *map_file)
 {
     char    *line;
@@ -40,4 +51,5 @@ void check_map(char *argument, t_map *map)
     if (!ft_strchr(argument, ".ber"))
         ft_error("Invalid map extension.");
     map->mappdata = create_array_of_lines(argument); // create an array of lines for easier work with it
+    check_rectangular(&map);
 }

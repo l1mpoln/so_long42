@@ -31,6 +31,8 @@ typedef struct s_map
 
 //utils
 void    ft_error(char *error); //error message
+int     find_y(t_map *map);
+int find_and_check_x(t_map *map, int y);
 
 //map
 void check_map(char *argument, t_map *map);
