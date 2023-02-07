@@ -17,6 +17,22 @@
 # include "../includes/gnl/get_next_line.h"
 # include "../includes/ft_printf/include/ft_printf.h"
 
+typedef struct s_map
+{
+    int     height;
+    int     weight;
+    int     player_position;
+    int     score;
+    int     current_score;
+    char    **mappdata;
+    int     enemypos;
+    int     gameover;
+}   t_map;
+
+//utils
 void    ft_error(char *error); //error message
 
-#endif
+//map
+void check_map(char *argument, t_map *map);
+
+#endif  

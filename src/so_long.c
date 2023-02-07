@@ -14,9 +14,9 @@
 
 int main(int argc, char **argv)
 {
-    //here will be structure
+    t_map *map;
 
     if (argc != 2)
         ft_error("Invalid number of arguments.");
-    check_map(argv[1]); //check map(check valid, check extension etc.)
+    check_map(argv[1], &map); //check map(check valid, check extension etc.)
 }
