@@ -17,4 +17,6 @@
 # include "../includes/gnl/get_next_line.h"
 # include "../includes/ft_printf/include/ft_printf.h"
 
+void    ft_error(char *error); //error message
+
 #endif

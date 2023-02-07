@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   work_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuzmin <zxcmasterass@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 12:58:08 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/07 12:58:08 by vkuzmin          ###   ########.fr       */
+/*   Created: 2023/02/07 13:48:45 by vkuzmin           #+#    #+#             */
+/*   Updated: 2023/02/07 13:48:45 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int main(int argc, char **argv)
+static void work_map(char *argument)
 {
-    //here will be structure
-
-    if (argc != 2)
-        ft_error("Invalid number of arguments.");
-    work_map(argv[1]); //work with map(check valid, check extension etc.)
+    if (!ft_strchr(argument, ".ber"))
+        ft_error("Invalid map extension.");
+    
 }
