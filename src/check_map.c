@@ -21,6 +21,8 @@ static void check_rectangular(t_map *map)
     find_and_check_x(map, y);
     if (x == y)
         ft_error("Incorrect map");
+    map->height = x;
+    map->weight = y;
 }
 
 static char **create_array_of_lines(char *map_file)
@@ -52,4 +54,5 @@ void check_map(char *argument, t_map *map)
         ft_error("Invalid map extension.");
     map->mappdata = create_array_of_lines(argument); // create an array of lines for easier work with it
     check_rectangular(&map);
+    check_surrounding(&map);
 }

@@ -26,7 +26,6 @@ int find_and_check_x(t_map *map, int y)
     int i;
     int n;
 
-
     i = 0;
     while (map->mappdata[i] != NULL)
     {
