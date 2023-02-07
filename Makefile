@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= push_swap
+NAME		= so_long
 SRCSDIR		= src
 OBJSDIR		= objs
 INCLUDES	= includes
