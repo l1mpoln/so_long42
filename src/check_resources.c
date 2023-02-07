@@ -22,7 +22,7 @@ static int check_c(t_map *map)
     {
         while (map->mappdata[i][n] != '\0')
         {
-            if (map->mappdata[i][n] == 'e')
+            if (map->mappdata[i][n] == 'c')
             {
                 counter++;
                 n++;
@@ -44,7 +44,7 @@ static int check_p(t_map *map)
     {
         while (map->mappdata[i][n] != '\0')
         {
-            if (map->mappdata[i][n] == 'e')
+            if (map->mappdata[i][n] == 'p')
             {
                 counter++;
                 n++;
