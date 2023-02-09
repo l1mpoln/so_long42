@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:09:57 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/09 13:20:31 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/09 13:39:40 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@ int	count_latters(char *str)
 {
 	int	i;
 
-	while (str != '\0')
+	i = 0;
+	while (str[i] != '\0')
 		i++;
 	return (i);
 }
 
-int	find_and_check_x(t_map *map, int y)
+int	find_and_check_x(t_map *map)
 {
 	int	i;
 	int	n;
