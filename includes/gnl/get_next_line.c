@@ -41,7 +41,7 @@ char	*ft_readfile(int fd, char *str)
 		buffer[read_bytes] = '\0';
 		str = ft_joinandfree(str, buffer);
 		if (ft_strchr(buffer, '\n'))
-			break;
+			break ;
 	}
 	free (buffer);
 	return (str);
@@ -95,12 +95,12 @@ char	*ft_delline(char *str)
 
 char	*get_next_line(int fd)
 {
-    static char *save;
-    char        *line;
+	static char	*save;
+	char		*line;
 
-    if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
-        return (NULL);
-    save = ft_readfile(fd, save);
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+		return (NULL);
+	save = ft_readfile(fd, save);
 	if (!save)
 		return (NULL);
 	line = ft_getline(save);
