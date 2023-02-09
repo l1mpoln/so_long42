@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:48:45 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/09 13:23:52 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/09 14:00:06 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	check_rectangular(t_map *map)
 	int	y;
 
 	y = find_y(map);
-	find_and_check_x(map, y);
+	find_and_check_x(map);
 	if (x == y)
 		ft_error("Incorrect map");
 	map->height = x;
