@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:48:45 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/09 14:00:06 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/09 14:20:42 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	check_rectangular(t_map *map)
 	int	y;
 
 	y = find_y(map);
-	find_and_check_x(map);
+	x = find_and_check_x(map);
 	if (x == y)
 		ft_error("Incorrect map");
 	map->height = x;
@@ -50,10 +50,8 @@ static char	**create_array_of_lines(char *map_file)
 
 void	check_map(char *argument, t_map *map)
 {
-	if (!ft_strchr(argument, ".ber"))
-		ft_error("Invalid map extension.");
 	map->mappdata = create_array_of_lines(argument);
-	check_rectangular(&map);
-	check_surrounding(&map);
-	check_resources(&map);
+	check_rectangular(map);
+	check_surrounding(map);
+	check_resources(map);
 }

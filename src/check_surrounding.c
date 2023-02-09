@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 18:39:22 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/09 13:21:53 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/09 14:22:28 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ static void	check_first_and_last(t_map *map)
 
 void	check_surrounding(t_map *map)
 {
-	check_first_and_last(&map);
-	check_others(&map);
+	check_first_and_last(map);
+	check_others(map);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vkuzmin <zxcmasterass@gmail.com>           +#+  +:+       +#+         #
+#    By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/07 13:20:54 by vkuzmin           #+#    #+#              #
-#    Updated: 2023/02/07 13:20:54 by vkuzmin          ###   ########.fr        #
+#    Updated: 2023/02/09 14:16:58 by vkuzmin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ OBJSDIR		= objs
 INCLUDES	= includes
 EXTLIB		= includes/libft
 
-SRCS		= so_long.c utils.c 
+SRCS		= so_long.c utils.c check_map.c check_resources.c check_surrounding.c
 
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
