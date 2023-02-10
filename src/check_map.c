@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../so_long.h"
 
 static void	check_rectangular(t_map *map)
 {

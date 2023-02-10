@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../so_long.h"
 
 int	main(int argc, char **argv)
 {

@@ -10,42 +10,38 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= so_long
-SRCSDIR		= src
-OBJSDIR		= objs
-INCLUDES	= includes
-EXTLIB		= includes/libft
+NAME 	= so_long
 
-SRCS		= so_long.c utils.c check_map.c check_resources.c check_surrounding.c
+CC 		= gcc
 
-CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS 	= -Wall -Wextra -Werror
 
-OBJS	= $(SRCS:%.c=$(OBJSDIR)/%.o)
+SRCS 	=	./gnl/get_next_line.c ./gnl/get_next_line_utils.c \
+			./src/check_map.c ./src/check_resources.c ./src/check_surrounding.c \
+			./src/so_long.c ./src/utils.c
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(EXTLIB)/libft.a
-	@echo "Assembling $@"
-	@$(CC) $(CFLAGS) -o $@ $^
+OBJS	= $(SRCS:.c=.o)
 
-$(OBJS): $(OBJSDIR)/%.o: $(SRCSDIR)/%.c
-	@mkdir -p $(@D)
-	@echo Compiling $<
-	@$(CC) $(CFLAGS) -I$(INCLUDES) -I$(EXTLIB)/incs -c $< -o $@
-
-$(EXTLIB)/libft.a:
-	@echo "Compiling $@"
-	@$(MAKE) -s -C $(EXTLIB) > /dev/null
+$(NAME) : $(OBJS)
+	@$(CC) $^ -o $@
+	@echo "\[\033[4;35m                                                            \n\
+	  ▄████████  ▄██████▄          ▄█          ▄██████▄  ███▄▄▄▄      ▄██████▄      \n\
+	 ███    ███ ███    ███        ███         ███    ███ ███▀▀▀██▄   ███    ███     \n\
+	 ███    █▀  ███    ███        ███         ███    ███ ███   ███   ███    █▀      \n\
+	 ███        ███    ███        ███         ███    ███ ███   ███  ▄███            \n\
+	███████████ ███    ███        ███         ███    ███ ███   ███ ▀▀███ ████▄      \n\
+	        ███ ███    ███        ███         ███    ███ ███   ███   ███    ███     \n\
+	  ▄█    ███ ███    ███        ███▌     ▄  ███    ███ ███   ███   ███    ███     \n\
+	▄████████▀   ▀██████▀  █████  ███████▄▄██  ▀██████▀   ▀█   █▀    ████████▀      \n\
+                                                                       	 		\033[0m"
+	@echo "                                \033[44mBy: Ayoub0x1"
+%.o:%.c
+	@$(CC) $(CFLAGS) -c $^ -o $@
 
 clean:
-	rm -rf $(OBJSDIR)
-	@$(MAKE) -s -C $(EXTLIB) clean
+	@rm -f $(OBJS)
 
 fclean: clean
-	rm -rf $(NAME)
-	@$(MAKE) -s -C $(EXTLIB) fclean
-
-re: fclean all
-
-.PHONY: all clean fclean re test
+	@rm -f $(NAME)

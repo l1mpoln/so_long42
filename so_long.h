@@ -13,9 +13,9 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "../includes/libft/libft.h"
-# include "../includes/gnl/get_next_line.h"
-# include "../includes/ft_printf/include/ft_printf.h"
+# include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
 
 typedef struct s_map
 {
@@ -39,4 +39,6 @@ void	check_map(char *argument, t_map *map);
 void	check_surrounding(t_map *map);
 void	check_resources(t_map *map);
 
-#endif  
+char	*get_next_line(int fd);
+
+#endif
