@@ -10,23 +10,21 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = so_long
+NAME 	= so_long
 INCLUDES = includes
-EXTLIB = $(INCLUDES)/libft
-CC = gcc
+EXTLIB = includes/libft
+CC 		= gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS 	= -Wall -Wextra -Werror
 
-SRCS = ./gnl/get_next_line.c ./gnl/get_next_line_utils.c \
-		./src/check_map.c ./src/check_resources.c ./src/check_surrounding.c \
-		./src/so_long.c ./src/utils.c
+SRCS 	=	./gnl/get_next_line.c ./gnl/get_next_line_utils.c \
+			./src/check_map.c ./src/check_resources.c ./src/check_surrounding.c \
+			./src/so_long.c ./src/utils.c
 
 all: $(NAME)
 
-OBJS = $(SRCS:.c=.o)
-
-$(NAME): $(OBJS) $(EXTLIB)/libft.a
-	$(CC) $^ -o $@
+$(NAME): $(EXTLIB)/libft.a $(SRCS:.c=.o)
+	@$(CC) $^ -o $@
 	@echo "\[\033[4;35m                                                            \n\
 	  ▄████████  ▄██████▄          ▄█          ▄██████▄  ███▄▄▄▄      ▄██████▄      \n\
 	 ███    ███ ███    ███        ███         ███    ███ ███▀▀▀██▄   ███    ███     \n\
@@ -40,13 +38,14 @@ $(NAME): $(OBJS) $(EXTLIB)/libft.a
 	@echo "                                \033[44mBy: Ayoub0x1"
 
 $(EXTLIB)/libft.a:
-	@$(MAKE) -s -C $(EXTLIB) > /dev/null
+	@$(MAKE) -C $(EXTLIB) all
 
-%.o: %.c
-	$(CC) $(CFLAGS) -I$(INCLUDES) -I$(EXTLIB)/incs -c $< -o $@
+%.o:%.c
+	@$(CC) $(CFLAGS) -I$(INCLUDES) -I$(EXTLIB)/incs -c $< -o $@
 
 clean:
-	@rm -f $(OBJS)
+	@rm -f $(SRCS:.c=.o)
 
 fclean: clean
 	@rm -f $(NAME)
+	@$(MAKE) -C $(EXTLIB) fclean
