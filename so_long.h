@@ -16,6 +16,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include "../includes/libft/libft.h"
+# include <stdio.h>
+
 
 typedef struct s_map
 {

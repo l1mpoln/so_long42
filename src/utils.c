@@ -56,6 +56,6 @@ int	find_y(t_map *map)
 
 void	ft_error(char *error)
 {
-	ft_printf("%s", error);
+	printf("%s", error);
 	exit(1);
 }
