@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:56:05 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/13 17:18:01 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/13 19:28:38 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,11 @@ typedef struct s_map
 
 //utils
 void	ft_error(char *error); //error message
-int		find_y(t_map *map);
-int		find_and_check_x(t_map *map);
 
 //map
-void	check_map(char *argument, t_map *map);
-void	check_surrounding(t_map *map);
-void	check_resources(t_map *map);
+char	**get_map(char *map_file);
 
+//gnl
 char	*get_next_line(int fd);
 
 #endif

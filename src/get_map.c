@@ -1,22 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   get_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 12:58:08 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/13 20:01:24 by vkuzmin          ###   ########.fr       */
+/*   Created: 2023/02/13 19:26:44 by vkuzmin           #+#    #+#             */
+/*   Updated: 2023/02/13 19:59:16 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	main(int argc, char **argv)
+char	**get_map(char *fmap)
 {
-	t_map	map;
+	char	*line;
+	char	*all_lines;
+	int		fd;
 
-	if (argc != 2)
-		ft_error("Invalid number of arguments.");
-	map.mappdata = get_map(argv[1]);
+	line = "";
+	all_lines = ft_strdup("");
+	fd = open(fmap, O_RDONLY);
+	if (fd < 0)
+		ft_error("Error");
+	while (line)
+	{
+		line = get_next_line(fd);
+		if (line == NULL || line[0] == '\n')
+			break ;
+		all_lines = ft_strjoin(all_lines, line);
+		free(line);
+	}
+	free(line);
+	close(fd);
+	if (all_lines[0] == '\0')
+		ft_error("Error");
+	return (ft_split(all_lines, '\n'));
 }
