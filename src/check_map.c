@@ -6,13 +6,13 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:48:45 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/09 14:20:42 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/13 17:16:12 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-static void	check_rectangular(t_map *map)
+/*static void	check_rectangular(t_map *map)
 {
 	int	x;
 	int	y;
@@ -24,6 +24,7 @@ static void	check_rectangular(t_map *map)
 	map->height = x;
 	map->weight = y;
 }
+*/
 
 static char	**create_array_of_lines(char *map_file)
 {
@@ -31,19 +32,23 @@ static char	**create_array_of_lines(char *map_file)
 	char	*lines;
 	int		fd;
 
-	fd = open(map_file, O_RDONLY);
 	line = "";
-	lines = "";
+	lines = ft_strdup("");
+	fd = open(map_file, O_RDONLY);
+	if (fd < 0)
+		ft_error("Error.");
 	while (line)
 	{
 		line = get_next_line(fd);
-		if (line[0] == '\n')
+		if (line[0] == '\n' || line == NULL)
 			break ;
 		lines = ft_strjoin(lines, line);
+		printf("%s", lines);
 		free(line);
 	}
 	free(line);
-	if (lines == '\0')
+	close(fd);
+	if (lines[0] == '\0')
 		ft_error("Bad map.");
 	return (ft_split(lines, '\n'));
 }

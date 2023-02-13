@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:56:05 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/09 13:39:58 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/13 16:23:26 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include "../includes/libft/libft.h"
+# include "./includes/libft/libft.h"
 # include <stdio.h>
-
 
 typedef struct s_map
 {
