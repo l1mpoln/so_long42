@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 16:58:44 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/15 17:14:14 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/15 18:08:55 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@ static void	check_collectible(t_map *map)
 	}
 	if (counter < 1)
 		ft_error("Bad map.");
+	map->score = counter;
+	map->current_score = 0;
+	map->gameover = 0;
 }
 
 static void	check_player(t_map *map)

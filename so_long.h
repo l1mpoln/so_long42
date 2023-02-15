@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:56:05 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/15 16:59:19 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/15 17:52:16 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <fcntl.h>
 # include "./includes/libft/libft.h"
 # include <stdio.h>
+# include <mlx.h>
 
 typedef struct s_map
 {
@@ -29,6 +30,10 @@ typedef struct s_map
 	char	**mappdata;
 	int		enemypos;
 	int		gameover;
+	void	*wall;
+	void	*exit;
+	void	*player;
+	void	*items;
 }	t_map;
 
 //utils
