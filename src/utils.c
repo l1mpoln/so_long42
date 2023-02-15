@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:09:57 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/15 15:56:54 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/15 16:36:45 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	height_weight(t_map *map)
 	y = 0;
 	while (map->mappdata[y])
 		y++;
-	map->height = y;
+	map->height = y - 1;
 	x = ft_strlen(map->mappdata[0]);
 	y = 0;
 	while (map->mappdata[y])
@@ -30,7 +30,7 @@ void	height_weight(t_map *map)
 			ft_error("Bad map.");
 		y++;
 	}
-	map->weight = x;
+	map->weight = x - 1;
 }
 
 void	ft_error(char *error)

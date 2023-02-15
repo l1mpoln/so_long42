@@ -6,7 +6,7 @@
 #    By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/07 13:20:54 by vkuzmin           #+#    #+#              #
-#    Updated: 2023/02/15 15:55:21 by vkuzmin          ###   ########.fr        #
+#    Updated: 2023/02/15 16:12:28 by vkuzmin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,3 +37,5 @@ clean:
 fclean: clean
 	@rm -f $(NAME)
 	@$(MAKE) -C $(EXTLIB) fclean
+
+re: fclean all
