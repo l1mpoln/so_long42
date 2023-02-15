@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:09:57 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/15 16:36:45 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/15 16:51:37 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	height_weight(t_map *map)
 		y++;
 	}
 	map->weight = x - 1;
+	if (map->weight == map->height)
+		ft_error("Bad map.");
 }
 
 void	ft_error(char *error)

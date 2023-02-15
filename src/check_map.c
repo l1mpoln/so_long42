@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:42:14 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/15 16:38:50 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/15 16:58:35 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,5 @@ void	check_map(t_map *map)
 {
 	height_weight(map);
 	check_surrounding(map);
+	check_content(map);
 }

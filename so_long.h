@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:56:05 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/15 15:45:34 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/15 16:59:19 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	ft_error(char *error); //error message
 //map
 char	**get_map(char *map_file);
 void	check_map(t_map *map);
+void	check_content(t_map *map);
 
 //gnl
 char	*get_next_line(int fd);
