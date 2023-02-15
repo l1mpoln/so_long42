@@ -6,7 +6,7 @@
 #    By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/07 13:20:54 by vkuzmin           #+#    #+#              #
-#    Updated: 2023/02/13 19:42:52 by vkuzmin          ###   ########.fr        #
+#    Updated: 2023/02/15 15:55:21 by vkuzmin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC 		 = gcc
 CFLAGS 	= -Wall -Wextra -Werror
 
 SRCS 	=	./gnl/get_next_line.c ./gnl/get_next_line_utils.c \
-			./src/so_long.c ./src/utils.c ./src/get_map.c
+			./src/so_long.c ./src/utils.c ./src/get_map.c ./src/check_map.c
 
 all: $(NAME)
 

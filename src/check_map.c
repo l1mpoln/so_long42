@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 12:58:08 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/15 15:58:01 by vkuzmin          ###   ########.fr       */
+/*   Created: 2023/02/15 15:42:14 by vkuzmin           #+#    #+#             */
+/*   Updated: 2023/02/15 15:49:59 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	main(int argc, char **argv)
+void	check_map(t_map *map)
 {
-	t_map	map;
-
-	if (argc != 2)
-		ft_error("Invalid number of arguments.");
-	map.mappdata = get_map(argv[1]);
-	check_map(&map);
+	height_weight(map);
 }
