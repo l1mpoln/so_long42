@@ -6,11 +6,26 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 19:26:44 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/13 19:59:16 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/15 16:42:14 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
+void	check_file(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '.')
+		i++;
+	if (str[i + 1] != 'b')
+		ft_error("Bad extension.");
+	if (str[i + 2] != 'e')
+		ft_error("Bad extension.");
+	if (str[i + 3] != 'r')
+		ft_error("Bad extension.");
+}
 
 char	**get_map(char *fmap)
 {
@@ -18,6 +33,7 @@ char	**get_map(char *fmap)
 	char	*all_lines;
 	int		fd;
 
+	check_file(fmap);
 	line = "";
 	all_lines = ft_strdup("");
 	fd = open(fmap, O_RDONLY);
