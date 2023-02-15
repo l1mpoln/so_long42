@@ -6,7 +6,7 @@
 #    By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/07 13:20:54 by vkuzmin           #+#    #+#              #
-#    Updated: 2023/02/15 17:05:30 by vkuzmin          ###   ########.fr        #
+#    Updated: 2023/02/15 18:23:15 by vkuzmin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,9 @@ $(NAME): $(EXTLIB)/libft.a $(SRCS:.c=.o)
 
 $(EXTLIB)/libft.a:
 	@$(MAKE) -C $(EXTLIB) all
+
+$(NAME) : $(OBJS)
+	@$(CC) -lmlx -framework OpenGL -framework AppKit  $^ -o $@
 
 %.o:%.c
 	@$(CC) $(CFLAGS) -I$(INCLUDES) -I$(EXTLIB)/incs -c $< -o $@

@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:56:05 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/15 17:52:16 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/15 18:18:51 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,9 @@ typedef struct s_map
 	char	**mappdata;
 	int		enemypos;
 	int		gameover;
-	void	*wall;
-	void	*exit;
-	void	*player;
-	void	*items;
+	int		steps;
+	void	*window;
+	void	*mlx;
 }	t_map;
 
 //utils
