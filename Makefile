@@ -6,7 +6,7 @@
 #    By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/07 13:20:54 by vkuzmin           #+#    #+#              #
-#    Updated: 2023/02/17 20:29:31 by vkuzmin          ###   ########.fr        #
+#    Updated: 2023/02/17 21:45:33 by vkuzmin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CFLAGS 	= -Wall -Wextra -Werror
 SRCS 	=	./gnl/get_next_line.c ./gnl/get_next_line_utils.c \
 			./src/so_long.c ./src/utils.c ./src/get_map.c ./src/check_map.c \
 			./src/check_content.c ./src/map_render.c ./src/keys_handling.c \
-			./src/moovement.c 
+			./src/moovement.c ./src/checking.c
 
 all: $(NAME)
 
