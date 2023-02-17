@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:56:05 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/17 17:56:17 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/17 21:32:25 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@
 # include "./includes/libft/libft.h"
 # include <stdio.h>
 # include <mlx.h>
+
+# define W 13
+# define S 1
+# define D 2
+# define A 0
 
 typedef struct s_map
 {
@@ -39,8 +44,6 @@ typedef struct s_map
 	void	*coin;
 	void	*player;
 	void	*floor;
-	int		img_height;
-	int		img_weight;
 }	t_map;
 
 //utils
@@ -55,4 +58,10 @@ void	map_render(t_map *map);
 //gnl
 char	*get_next_line(int fd);
 void	height_weight(t_map *map);
+void	keys_handling(t_map *map);
+
+//moovement
+void	go_top(t_map *map);
+int		check_all_top(t_map *map);
+
 #endif

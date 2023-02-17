@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 16:58:44 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/15 18:08:55 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/17 20:49:41 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,11 @@ static void	check_player(t_map *map)
 		while (map->mappdata[i][n] != '\0')
 		{
 			if (map->mappdata[i][n] == 'P')
+			{	
 				counter++;
+				map->player_position_x = i;
+				map->player_position_y = n;
+			}
 			n++;
 		}
 		i++;

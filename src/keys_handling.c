@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   keys_handling.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 12:58:08 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/17 21:19:42 by vkuzmin          ###   ########.fr       */
+/*   Created: 2023/02/17 19:54:09 by vkuzmin           #+#    #+#             */
+/*   Updated: 2023/02/17 21:33:12 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	main(int argc, char **argv)
+int	key_hook(int key, t_map *map)
 {
-	t_map	map;
+	if (key == W)
+		go_top(map);
+	return (0);
+}
 
-	if (argc != 2)
-		ft_error("Invalid number of arguments.");
-	map.mappdata = get_map(argv[1]);
-	check_map(&map);
-	map.mlx = mlx_init();
-	map.window = mlx_new_window(map.mlx,
-			(map.weight + 1) * 50, (map.height + 1) * 50, "so-long");
-	map_render(&map);
-	keys_handling(&map);
+void	keys_handling(t_map *map)
+{
+	mlx_hook(map->window, 2, 0, key_hook, map);
+	mlx_loop(map->mlx);
 }
