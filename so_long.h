@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:56:05 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/18 18:39:51 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/18 19:31:11 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ typedef struct s_map
 	int		steps;
 	char	**mappdata;
 	int		enemypos;
-	int		gameover;
 	void	*window;
 	void	*mlx;
 	void	*wall;
@@ -72,5 +71,8 @@ int		check_all_top(t_map *map);
 int		check_all_left(t_map *map);
 int		check_all_right(t_map *map);
 int		check_all_bot(t_map *map);
+
+//free
+void	free_struct(t_map *map);
 
 #endif
