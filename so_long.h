@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:56:05 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/18 18:01:22 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/18 18:39:51 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef struct s_map
 void	ft_error(char *error); //error message
 void	end_game(t_map *map);
 int		stay_on_exit(t_map *map);
+void	ft_steps(t_map *map);
 
 //map
 char	**get_map(char *map_file);

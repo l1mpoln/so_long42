@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 20:29:00 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/18 18:09:05 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/18 18:39:25 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	go_top(t_map *map)
 		map->player_position_y * 50, map->player_position_x * 50);
 	map->player_position_x = map->player_position_x - 1;
 	map->steps = map->steps + 1;
+	ft_steps(map);
 }
 
 void	go_left(t_map *map)
@@ -54,6 +55,7 @@ void	go_left(t_map *map)
 		map->player_position_y * 50, map->player_position_x * 50);
 	map->player_position_y = map->player_position_y - 1;
 	map->steps = map->steps + 1;
+	ft_steps(map);
 }
 
 void	go_right(t_map *map)
@@ -76,6 +78,7 @@ void	go_right(t_map *map)
 		map->player_position_y * 50, map->player_position_x * 50);
 	map->player_position_y = map->player_position_y + 1;
 	map->steps = map->steps + 1;
+	ft_steps(map);
 }
 
 void	go_bot(t_map *map)
@@ -98,4 +101,5 @@ void	go_bot(t_map *map)
 		map->player_position_y * 50, map->player_position_x * 50);
 	map->player_position_x = map->player_position_x + 1;
 	map->steps = map->steps + 1;
+	ft_steps(map);
 }

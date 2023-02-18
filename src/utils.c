@@ -6,11 +6,18 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:09:57 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/18 18:04:44 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/18 18:41:32 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
+
+void	ft_steps(t_map *map)
+{
+	mlx_put_image_to_window(map->mlx, map->window, map->wall, 0, 0);
+	mlx_string_put(map->mlx, map->window, 20, 20, 0x000000ff,
+		ft_itoa(map->steps));
+}
 
 int	stay_on_exit(t_map *map)
 {
