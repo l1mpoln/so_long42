@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 19:26:44 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/15 16:42:14 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/20 18:17:13 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,24 @@ void	check_file(char *str)
 		ft_error("Bad extension.");
 }
 
+static void	check_fd(int fd)
+{
+	if (fd < 0)
+		ft_error("Error");
+}
+
 char	**get_map(char *fmap)
 {
 	char	*line;
 	char	*all_lines;
 	int		fd;
+	char	**result;
 
 	check_file(fmap);
 	line = "";
 	all_lines = ft_strdup("");
 	fd = open(fmap, O_RDONLY);
-	if (fd < 0)
-		ft_error("Error");
+	check_fd(fd);
 	while (line)
 	{
 		line = get_next_line(fd);
@@ -51,5 +57,7 @@ char	**get_map(char *fmap)
 	close(fd);
 	if (all_lines[0] == '\0')
 		ft_error("Error");
-	return (ft_split(all_lines, '\n'));
+	result = ft_split(all_lines, '\n');
+	free(all_lines);
+	return (result);
 }
