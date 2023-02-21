@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 12:56:05 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/18 20:20:44 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/21 12:36:12 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@
 # define S 1
 # define D 2
 # define A 0
+# define ARROW_UP 126
+# define ARROW_BOT 125
+# define ARROW_LEFT 123
+# define ARROW_RIGHT 124
 
 typedef struct s_map
 {

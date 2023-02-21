@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 19:54:09 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/18 20:19:08 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/21 12:37:18 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 int	key_hook(int key, t_map *map)
 {
-	if (key == W)
+	printf("%d\n", key);
+	if (key == W || key == ARROW_UP)
 		go_top(map);
-	if (key == A)
+	if (key == A || key == ARROW_LEFT)
 		go_left(map);
-	if (key == D)
+	if (key == D || key == ARROW_RIGHT)
 		go_right(map);
-	if (key == S)
+	if (key == S || key == ARROW_BOT)
 		go_bot(map);
 	if (key == 53)
 		end_game(map);
