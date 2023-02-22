@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:09:57 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/18 20:18:53 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/22 15:13:11 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	end_game(t_map *map)
 {
 	mlx_destroy_window(map->mlx, map->window);
 	free_struct(map);
-	system("leaks so_long");
 	exit(1);
 }
 
