@@ -6,7 +6,7 @@
 /*   By: vkuzmin <vkuzmin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 19:54:09 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/02/21 12:37:18 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/02/22 15:21:21 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	key_hook(int key, t_map *map)
 {
-	printf("%d\n", key);
 	if (key == W || key == ARROW_UP)
 		go_top(map);
 	if (key == A || key == ARROW_LEFT)
@@ -31,5 +30,6 @@ int	key_hook(int key, t_map *map)
 void	keys_handling(t_map *map)
 {
 	mlx_hook(map->window, 2, 0, key_hook, map);
+	mlx_hook(map->window, 17, 0, end_game, map);
 	mlx_loop(map->mlx);
 }
